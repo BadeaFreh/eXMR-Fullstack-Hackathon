@@ -2,21 +2,13 @@ const express = require("express");
 const router = express.Router();
 const SongReview = require("../models/SongReview");
 
-songsFilter = function (SongsReviews, filter) {
-  let newArrSongs = [];
-  for (song of SongsReviews) {
-    if (filter == song._doc.category) {
-      newArrSongs.push(song);
-    }
-  }
-  return [...newArrSongs];
-};
+const songsReviews = require("../utils/songsReviews");
 
 router.get("/songs-reviews", function (req, res) {
   let category = req.query.category;
   SongReview.find({})
     .then((SongReview) => {
-      res.send(songsFilter(SongReview, category));
+      res.send(songsReviews.songsFilter(SongReview, category));
     })
     .catch((err) => res.status(500).send({ msg: "Internal server error" }));
 });
