@@ -259,6 +259,13 @@
     }
   }
   
+  @media (max-width: 930px) {
+    .review-footer {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+  }
+
   @media (max-width: 1000px) {
     body {
       padding: 32px 48px;
