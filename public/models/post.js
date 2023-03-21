@@ -1,23 +1,32 @@
 class Post {
     constructor(){
-        this.postsData = []
+        this.songsData = []
     }
 
-    getPosts() {
-        return $.get(`posts`).then(postsResults => {
-            this.postsData = postsResults
-            return this.postsData
+    getSongs() {
+        return $.get(`songs`).then(songsResults => {
+            this.songsData = songsResults
+            return this.songsData
         })
     }
 
-    postNewPost(postText, postSource, postCategory) {
-        let postObject = { createdBy : 1, dateCreated: new Date(), text: postText, sourceLink: postSource, category:postCategory}
+    postNewPost(songTitle, artistName, sourceLink, songCategory, songReview) {
+        let newSongObject = { 
+            titel: songTitle,
+            artist: artistName,
+            source: sourceLink,
+            user: 1, //Just For Now - There Is Just One User ! 
+            date_created: new Date(),
+            category: songCategory, 
+            reactions: {likes: 0, dislikes: 0, wow: 0, angry: 0},
+            review: songReview 
+        }
        
         return $.ajax({
-            url: "post",
+            url: "add", // See It By Server Request ! 
             method: "POST",
             contentType: "application/json",
-            data: JSON.stringify(postObject),
+            data: JSON.stringify(newSongObject),
             success:  (result) => {
                 return 
 
