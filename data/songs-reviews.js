@@ -1,33 +1,32 @@
 // reactions indexes: 0=likes, 1=dislikes, 2=angry, 3=wow
 
-const songReviews = [
-    {
-        songTitle:"Seize The Day" ,
-        singer: "Avenged Sevenfold" ,
-        genre: "Metal" ,
+const songReviews = [{
+        songTitle: "Seize The Day",
+        singer: "Avenged Sevenfold",
+        genre: "Metal",
         userName: "FajarNoobArt",
-        review: "I don’t care how many years go by, this song will always be amazing and hits different each time I hear it" ,
-        reactions: [120,30,5,46] ,
+        review: "I don’t care how many years go by, this song will always be amazing and hits different each time I hear it",
+        reactions: [120, 30, 5, 46],
         datePosted: new Date("2021-06-04"),
         source: "https://www.youtube.com/watch?v=jUkoL9RE72o"
     },
     {
-        songTitle:"Memories" ,
+        songTitle: "Memories",
         singer: "Maroon 5",
         genre: "Pop",
         userName: "The last avenger",
         review: "The saddest part of life is when the person who gave you the best memories becomes a memory",
-        reactions: [328,55,14,30],
+        reactions: [328, 55, 14, 30],
         datePosted: new Date("2021-08-10"),
         source: "https://www.youtube.com/watch?v=SlPhMPnQ58k"
     },
     {
-        songTitle:"Comfortably numb" ,
+        songTitle: "Comfortably numb",
         singer: "Pink Floyd",
         genre: "Rock",
-        userName:"Theblackhours" ,
+        userName: "Theblackhours",
         review: "My first time hearing this masterpiece. I hope this gives you chills when you see this to remind of the first time you heard this and makes you feel like it’s the first time all over again",
-        reactions:[560,123,56,277],
+        reactions: [560, 123, 56, 277],
         datePosted: new Date("2020-04-23"),
         source: "https://www.youtube.com/watch?v=_FrOQC-zEog"
     },
@@ -35,61 +34,61 @@ const songReviews = [
         songTitle: "The Bones",
         singer: "Marrin Morris",
         genre: "Countrey",
-        userName:"Becca Edwards" ,
+        userName: "Becca Edwards",
         review: "I lost my husband to Covid on October 6, 2020 and this song was what I selected to use in his tribute video when our pictures were shown. It speaks volumes to real relationships that go through ups and downs️  Peace and blessings to all who are heartbroken ",
-        reactions:[800,3,10,70] ,
-        datePosted:new Date("2023-03-09") ,
+        reactions: [800, 3, 10, 70],
+        datePosted: new Date("2023-03-09"),
         source: "https://www.youtube.com/watch?v=gvPMVKUI9go"
 
     },
     {
-        songTitle:"Here Without You" ,
+        songTitle: "Here Without You",
         singer: "3 Doors Down",
         genre: "Rock",
-        userName:"wolfuccino2" ,
-        review: "Still a killer hit, sad part is the older you get the more real this song becomes" ,
-        reactions: [280,103,45,78],
-        datePosted:new Date("2018-07-09") ,
+        userName: "wolfuccino2",
+        review: "Still a killer hit, sad part is the older you get the more real this song becomes",
+        reactions: [280, 103, 45, 78],
+        datePosted: new Date("2018-07-09"),
         source: "https://www.youtube.com/watch?v=kPBzTxZQG5Q"
     },
     {
-        songTitle: "Dance  Monkey" ,
-        singer: "Tones And I" ,
-        genre:"Soul" ,
-        userName:"Tobias Weit" ,
+        songTitle: "Dance  Monkey",
+        singer: "Tones And I",
+        genre: "Soul",
+        userName: "Tobias Weit",
         review: "THIS GOES HARD ON MUTE ",
-        reactions: [150,51,23,15],
-        datePosted:new Date("2023-01-01") ,
+        reactions: [150, 51, 23, 15],
+        datePosted: new Date("2023-01-01"),
         source: "https://www.youtube.com/watch?v=q0hyYWKXF0Q"
     },
     {
-        songTitle:"Headlines" ,
+        songTitle: "Headlines",
         singer: "Drake",
-        genre: "Hip-Hop" ,
+        genre: "Hip-Hop",
         userName: "James43",
-        review:"This song hits so different after not hearing it in years " ,
-        reactions: [600,200,14,18],
+        review: "This song hits so different after not hearing it in years ",
+        reactions: [600, 200, 14, 18],
         datePosted: new Date("2017-03-03"),
         source: "https://www.youtube.com/watch?v=cimoNqiulUE"
     },
     {
         songTitle: "Everything I Wanted",
-        singer: "Arizona Zervas" ,
+        singer: "Arizona Zervas",
         genre: "Alternative",
         userName: "Ardita",
         review: "This song sounds like heaven but hurts like hell",
-        reactions:[100,30,5,12] ,
-        datePosted:new Date("2021-03-03") ,
+        reactions: [100, 30, 5, 12],
+        datePosted: new Date("2021-03-03"),
         source: "https://www.youtube.com/watch?v=EgBJmlPo8Xw"
     },
     {
-        songTitle:"Him and I " ,
-        singer:"G-Eazy" ,
-        genre:"Electronic" ,
+        songTitle: "Him and I ",
+        singer: "G-Eazy",
+        genre: "Electronic",
         userName: "Rocklover",
         review: "The more I listen to this song, the more I love it",
-        reactions: [100,20,2,20],
-        datePosted:new Date("2020-07-23") ,
+        reactions: [100, 20, 2, 20],
+        datePosted: new Date("2020-07-23"),
         source: "https://www.youtube.com/watch?v=SA7AIQw-7Ms"
     },
     {
@@ -108,7 +107,7 @@ const songReviews = [
         genre: "Rap",
         userName: "itsrealkenna",
         review: "His music hits hard when you have been though the motions of life, and you just tryna understand why everything keep happening to you and the way it does but sometimes you just gotta let it go and live stress fire. Thank you for being as real as you are Russ. Hopefully one day my music can have the same impact as yours",
-        reactions:[908, 60, 20, 10],
+        reactions: [908, 60, 20, 10],
         datePosted: new Date("2022-12-03"),
         source: "https://www.youtube.com/watch?v=oorK4RPgZ8Q"
     },
@@ -192,4 +191,4 @@ const songReviews = [
         datePosted: new Date("2020-10-02"),
         source: "https://www.youtube.com/watch?v=oygrmJFKYZY"
     }
-   ]
+]
