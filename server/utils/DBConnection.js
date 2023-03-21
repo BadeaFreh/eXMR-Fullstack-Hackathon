@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const CONFIG = require('../config')
+const config = require('../config')
 const connectToDB = function() {
-    mongoose.connect(CONFIG.DB_URL, {
+    mongoose.connect(config.CONFIG.DB_URL, {
         useNewUrlParser: true,
     }).catch((err) => console.log(err))
 }
