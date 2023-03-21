@@ -1,3 +1,5 @@
+// reactions indexes: 0=likes, 1=dislikes, 2=angry, 3=wow
+
 const songReviews = [
     {
         songTitle:"Seize The Day" ,
