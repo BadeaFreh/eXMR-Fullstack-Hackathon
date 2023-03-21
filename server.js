@@ -3,7 +3,7 @@ const path = require('path')
 const app = express()
 const api = require('./server/routes/song-review-api')
 const DBConnection = require('./server/utils/DBConnection')
-const CONFIG = require('./server/config')
+const config = require('./server/config')
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
@@ -14,6 +14,6 @@ DBConnection.connectToDB()
 
 app.use('/', api)
 
-app.listen(CONFIG.PORT, function() {
-    console.log(`Running on port ${CONFIG.PORT}`)
+app.listen(config.CONFIG.PORT, function() {
+    console.log(`Running on port ${config.CONFIG.PORT}`)
 })
