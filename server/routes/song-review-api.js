@@ -9,8 +9,8 @@ router.get("/songs-reviews", function (req, res) {
     })
     .catch((err) => res.status(500).send({ msg: "Internal server error" }));
 });
-/*router.post("/songs-reviews", function (req, res) {
-  const newPost = new post({
+router.post("/songs-reviews", function (req, res) {
+  const newPost = new SongReview({
     title: req.body.title,
     artist: req.body.artist,
     source: req.body.source,
@@ -28,22 +28,13 @@ router.get("/songs-reviews", function (req, res) {
   console.log(newPost);
   newPost.save();
   res.send(`the post that created by  ${newPost.createdBy} is saved`);
-});*/
-
-/*router.get("/songs-reviews/:word", (req, res) => {
-    let Gluten = req.query.gluten;
-   // let Dairy = req.query.dairy;
-    let word = req.params.word;
-    arr = [];
-    if (word != "") {
-      arr.push(word);
-    }
-    axios
-      .get(
-        ``
-      )
-      .then((SongReview) => {
-        res.send(songsFilter(SongReview, arr));
-      });
+});
+router.delete("/post/:postID", function (req, res) {
+  SongReview.findOneAndRemove({ _id: req.params.postID }).then(function (
+    result
+  ) {
+    res.send(`the post deleted`);
   });
-module.exports = router;*/
+});
+
+module.exports = router;
