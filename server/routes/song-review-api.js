@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const SongReview = require("../models/SongReview");
 
-const songsReviews = require("../utils/songsReviews");
+const songsReviewsUtils = require("../utils/songs-reviews-utils");
 
 router.get("/songs-reviews", function(req, res) {
     let category = req.query.category;
-    SongReview.find({})
-        .then((SongReview) => {
-            res.send(songsReviews.songsFilter(SongReview, category));
+    SongReview.find({}).populate("user")
+        .then((SongsReviews) => {
+            res.send(songsReviewsUtils.songsFilterByCategory(SongsReviews, category));
         })
         .catch((err) => res.status(500).send({ msg: "Internal server error" }));
 });
