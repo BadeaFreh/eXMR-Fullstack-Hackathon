@@ -23,7 +23,7 @@ class Review {
         }
        
         return $.ajax({
-            url: "add", // See It By Server Request ! 
+            url: "songs-reviews", 
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify(newSongObject),
@@ -36,3 +36,4 @@ class Review {
     }
 
 }
+ 
