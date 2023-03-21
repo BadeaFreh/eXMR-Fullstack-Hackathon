@@ -48,8 +48,12 @@
             </li>
           </ul>
         </aside>
-        <section>
-          <ul>
+
+
+        <section id="reviews-section">
+
+
+          <!-- <ul>
             <li class="post">
               <p>
                 Millennial dads spend 3 times as much time with their kids than
@@ -67,8 +71,39 @@
                 <button>⛔️ 0</button>
               </div>
             </li>
-          </ul>
+          </ul> -->
         </section>
+
+
+
+        <script id="reviews-template" type="text/x-handlebars-template">
+          {{#each review}}
+          <li class="review">
+            <div class="review-header">
+              <div class="header-content">
+                <span class="song-title">{{songTitle}}</span><span class="singer">{{singer}}</span>
+              </div>
+            </div>
+            <p class="review-content">
+              {{review}}
+              <a class="source" href="{{source}} " target="_blank">(Listen)</a>
+              <span class="tag" style="background-color: #ef4444;">{{genre}}</span><br>
+            </p>
+            <div class="review-footer">
+              <div>
+                <span class="date-created">{{datePosted}}</span> by <span class="user"><i>{{user}}</i></span>
+              </div>
+              <div class="vote-buttons">
+                <button>👍 {{reactions[0]}} </button>
+                <button>👍 {{reactions[1]}} </button>
+                <button> 🤯 {{reactions[2]}}</button>
+                <button> ⛔️ {{reactions[3]}} </button>
+              </div>
+            </div>
+          </li>
+          
+      </script>
+
       </main>
     </div>
     
