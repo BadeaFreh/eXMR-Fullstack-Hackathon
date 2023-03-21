@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-// reactions is array that have [likes,dislikes,angry,wow] 
 const songReviewSchema = new Schema({
     songTitle: String,
     singer: String,
@@ -9,7 +8,7 @@ const songReviewSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     datePosted: Date,
     genre: String,
-    reactions: Array,
+    reactions: Object,
     review: String
 })
 
