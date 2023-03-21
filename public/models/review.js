@@ -1,4 +1,4 @@
-class Review {
+ class Review {
     constructor(){
         this.songsData = []
     }
@@ -17,7 +17,7 @@ class Review {
             genre: songCategory , 
             userName: username, //Just For Now - There Is Just One User ! 
             review: songReview,
-            reactions: [0,0,0,0],
+            reactions: {likes:0,dislikes:0,wow:0,angry:0},
             datePosted: new Date(),
             source:sourceLink
         }
