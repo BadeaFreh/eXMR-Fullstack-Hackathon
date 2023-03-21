@@ -1,25 +1,25 @@
-class Post {
+class Review {
     constructor(){
         this.songsData = []
     }
 
-    getSongs() {
-        return $.get(`songs`).then(songsResults => {
+    getReviews() {
+        return $.get(`songs-reviews`).then(songsResults => {
             this.songsData = songsResults
             return this.songsData
         })
     }
 
-    postNewPost(songTitle, artistName, sourceLink, songCategory, songReview) {
+    postNewPost(title, singerName, sourceLink, songCategory, songReview,username) {
         let newSongObject = { 
-            titel: songTitle,
-            artist: artistName,
-            source: sourceLink,
-            user: 1, //Just For Now - There Is Just One User ! 
-            date_created: new Date(),
-            category: songCategory, 
-            reactions: {likes: 0, dislikes: 0, wow: 0, angry: 0},
-            review: songReview 
+            songTitle: title ,
+            singer:singerName ,
+            genre: songCategory , 
+            userName: username, //Just For Now - There Is Just One User ! 
+            review: songReview,
+            reactions: [0,0,0,0],
+            datePosted: new Date(),
+            source:sourceLink
         }
        
         return $.ajax({
@@ -35,5 +35,5 @@ class Post {
 
     }
 
-
 }
+
