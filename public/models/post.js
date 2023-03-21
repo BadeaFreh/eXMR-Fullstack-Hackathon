@@ -10,7 +10,7 @@ class Review {
         })
     }
 
-    postNewPost(title, singerName, sourceLink, songCategory, songReview,username) {
+    postNewReview(title, singerName, sourceLink, songCategory, songReview,username) {
         let newSongObject = { 
             songTitle: title ,
             singer:singerName ,
@@ -36,4 +36,3 @@ class Review {
     }
 
 }
-
