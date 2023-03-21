@@ -9,7 +9,7 @@ router.get("/songs-reviews", function (req, res) {
     })
     .catch((err) => res.status(500).send({ msg: "Internal server error" }));
 });
-router.post("/songs-reviews", function (req, res) {
+/*router.post("/songs-reviews", function (req, res) {
   const newPost = new post({
     title: req.body.title,
     artist: req.body.artist,
@@ -28,7 +28,7 @@ router.post("/songs-reviews", function (req, res) {
   console.log(newPost);
   newPost.save();
   res.send(`the post that created by  ${newPost.createdBy} is saved`);
-});
+});*/
 
 /*router.get("/songs-reviews/:word", (req, res) => {
     let Gluten = req.query.gluten;
