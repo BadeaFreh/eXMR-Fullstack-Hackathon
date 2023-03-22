@@ -22,6 +22,16 @@ router.post("/song-review", function(req, res) {
     songReview.save()
     res.status(201).send({ "message": "song review created" })
 });
+
+router.put('/song-review/:songReviewID', function(req, res) {
+    let songReviewID = req.params.songReviewID
+    const updatedSongReview = req.body
+    SongReview.findByIdAndUpdate(songReviewID, updatedSongReview)
+        .then(function(result) {
+            res.send({ "message": "song review updated" });
+        });
+})
+
 router.delete("/song-review/:songReviewID", function(req, res) {
     SongReview.findOneAndRemove({ _id: req.params.songReviewID })
         .then(function(result) {
