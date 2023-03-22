@@ -3,11 +3,21 @@
         this.songsData = []
     }
 
-    getReviews() {
-        return $.get(`songs-reviews`).then(songsResults => {
-            this.songsData = songsResults
-            return this.songsData
-        })
+    getReviews(reaction) {
+        if(reaction!=0){
+            return $.get(`songs-reviews?genre=${reaction}`).then(songsResults => {
+                this.songsData = songsResults
+                return this.songsData
+            })
+        }else{
+            return $.get(`songs-reviews`).then(songsResults => {
+                this.songsData = songsResults
+                return this.songsData
+            })
+        }
+
+        
+        
     }
 
     postNewReview(title, singerName, sourceLink, songCategory, songReview) {
