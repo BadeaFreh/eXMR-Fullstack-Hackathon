@@ -1,11 +1,11 @@
- class Review {
+class Review {
     constructor(){
         this.songsData = []
     }
 
-    getReviews(reaction) {
-        if(reaction!=0){
-            return $.get(`songs-reviews?genre=${reaction}`).then(songsResults => {
+    getReviews(category) {
+        if(category!=0){
+            return $.get(`songs-reviews?genre=${category}`).then(songsResults => {
                 this.songsData = songsResults
                 return this.songsData
             })
