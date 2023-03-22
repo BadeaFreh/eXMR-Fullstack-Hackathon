@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="./styles/home-styles.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <title>eXpress Music Reviews</title>
 </head>
 
@@ -120,9 +122,45 @@
     </main>
   </div>
   <script id="reviews-template" type="text/x-handlebars-template">
+    {{#each review}}
+          <li class="review">
+            <div class="review-header">
+              <div class="header-content">
+                <span class="song-title">{{songTitle}}</span><span class="singer">{{singer}}</span>
+              </div>
+            </div>
+            <p class="review-content">
+              {{review}}
+              <div class="play-button">
+                <a class="source" href="{{source}}" target="_blank">
+                  <img src="./images/play-button.svg" alt="" height="40">
+                </a>
+              </div>              <span class="tag" style="background-color: #ef4444;">{{genre}}</span><br>
+            </p>
+            <div class="review-footer">
+              <div>
+                <span class="date-created">{{datePosted}}</span> by <span class="user"><i>{{user}}</i></span>
+              </div>
+              <div class="vote-buttons">
+                <button>👍 {{reactions.likes}} </button>
+                <button>👍 {{reactions.dislikes}} </button>
+                <button>😮 {{reactions.wow}}</button>
+                <button>😡  {{reactions.angry}} </button>
+              </div>
+            </div>
+          </li>
+          {{/each}}
 
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.4.1.js"
+    integrity="sha256-CfQXwuZDtzbBnpa5nhZmga8QAumxkrhOToWweU52T38=" crossorigin="anonymous"></script>
+  <script src="./controllers/songs-reviews.js"></script>
+  <script src="./models/review.js"></script>
+  <script src="./views/home-renderer.js"></script>
+  <script src="./controllers/controllerX.js"></script>
 </body>
-</body>
+
 
 </html>
