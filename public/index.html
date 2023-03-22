@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="./styles/home-styles.css" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>eXpress Music Reviews</title>
 </head>
 
@@ -33,7 +32,7 @@
       <div class="input-group-1">
         <input type="text" placeholder="Youtube Link..." class="song-link" />
         <input type="text" placeholder="Song Name" class="song-name" />
-        <input type="text" placeholder="Singer" class="singer" />
+        <input type="text" placeholder="Singer" class="singer-name" />
         <select class="categories-menu">
           <option value="">Choose category</option>
           <option value="Pop">Pop</option>
@@ -85,13 +84,8 @@
         </ul>
       </aside>
 
-<<<<<<< HEAD
-      <section id="reviews-section">
-        <ul>
-=======
       <section>
         <ul class="reviews" id="reviews-section">
->>>>>>> master
           <li class="review">
             <div class="review-header">
               <div class="header-content">
@@ -101,14 +95,19 @@
             <p class="review-content">
               I don’t care how many years go by, this song will always be
               amazing and hits different each time I hear it.
-              <a class="source" href="https://www.youtube.com/watch?v=jUkoL9RE72o" target="_blank">(Listen)</a>
+
               <span class="tag" style="background-color: #ef4444">Metal</span><br>
             </p>
             <div class="review-footer">
-              <div>
+              <div class="date-user-data">
                 <span class="date-created">2021-06-04</span> by <span class="user"><i>FajarNoobArt</i></span>
               </div>
-               <div class="vote-buttons">
+              <div class="play-button">
+                <a class="source" href="https://www.youtube.com/watch?v=jUkoL9RE72o" target="_blank">
+                  <img src="./images/play-button.svg" alt="" height="40">
+                </a>
+              </div>
+              <div class="vote-buttons">
                 <button>👍 120</button>
                 <button>👎 30</button>
                 <button>😮 5</button>
@@ -118,45 +117,12 @@
           </li>
         </ul>
       </section>
-
-      <script id="reviews-template" type="text/x-handlebars-template">
-        {{#each review}}
-        <li class="review">
-          <div class="review-header">
-            <div class="header-content">
-              <span class="song-title">{{songTitle}}</span><span class="singer">{{singer}}</span>
-            </div>
-          </div>
-          <p class="review-content">
-            {{review}}
-            <a class="source" href="{{source}} " target="_blank">(Listen)</a>
-            <span class="tag" style="background-color: #ef4444;">{{genre}}</span><br>
-          </p>
-          <div class="review-footer">
-            <div>
-              <span class="date-created">{{datePosted}}</span> by <span class="user"><i>{{user}}</i></span>
-            </div>
-            <div class="vote-buttons">
-              <button>👍 {{reactions.likes}} </button>
-              <button>👎 {{reactions.dislikes}}</button>
-              <button> 🤯 {{reactions.wow}}</button>
-              <button> ⛔️ {{reactions.angry}} </button>
-            </div>
-          </div>
-        </li>
-        {{/each}}
-        
-    </script>
-  
     </main>
   </div>
-  <script src="https://code.jquery.com/jquery-migrate-3.4.1.js" integrity="sha256-CfQXwuZDtzbBnpa5nhZmga8QAumxkrhOToWweU52T38=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-  <script src="./models/review.js"></script>
-  <script src="./views/home-renderer.js"></script>
-  <script src="./controllers/controllerX.js"></script>
-  
-  
+  <script id="reviews-template" type="text/x-handlebars-template">
+
+  </script>
+</body>
 </body>
 
 </html>
