@@ -11,7 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Sono:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <link href="./styles/home-styles.css" rel="stylesheet" />
+
   <title>eXpress Music Reviews</title>
 </head>
 
@@ -119,6 +122,8 @@
       </section>
     </main>
   </div>
+
+  
   <script id="reviews-template" type="text/x-handlebars-template">
     {{#each review}}
           <li class="review">
@@ -151,11 +156,10 @@
           </li>
           {{/each}}
 
-  </>
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-  <script src="https://code.jquery.com/jquery-migrate-3.4.1.js"
-    integrity="sha256-CfQXwuZDtzbBnpa5nhZmga8QAumxkrhOToWweU52T38=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.4.1.js" integrity="sha256-CfQXwuZDtzbBnpa5nhZmga8QAumxkrhOToWweU52T38=" crossorigin="anonymous"></script>
   <script src="./controllers/songs-reviews.js"></script>
   <script src="./models/review.js"></script>
   <script src="./views/home-renderer.js"></script>

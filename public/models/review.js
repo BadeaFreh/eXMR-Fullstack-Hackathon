@@ -10,20 +10,20 @@
         })
     }
 
-    postNewReview(title, singerName, sourceLink, songCategory, songReview,username) {
-        let newSongObject = { 
-            songTitle: title ,
-            singer:singerName ,
-            genre: songCategory , 
-            userName: username, //Just For Now - There Is Just One User ! 
-            review: songReview,
-            reactions: {likes:0,dislikes:0,wow:0,angry:0},
-            datePosted: new Date(),
-            source:sourceLink
-        }
+    postNewReview(title, singerName, sourceLink, songCategory, songReview) {
+        let newSongObject = {
+           songTitle: title,
+           singer: singerName,
+           source: sourceLink,
+           user:"641ab02ad82d7fc05021d419",
+           datePosted: "2022/03/03",
+           genre:songCategory,
+           reactions:{likes:0,dislikes:0,angry:0,wow:0},
+           review:songReview
+         }
        
         return $.ajax({
-            url: "songs-reviews", 
+            url: "song-review", 
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify(newSongObject),
