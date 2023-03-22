@@ -1,10 +1,11 @@
 const SongReview = require("../models/SongReview");
+const moment = require("moment")
 
-const relevantSongsReviews = function(category, reactionType) {
-    if (category && reactionType) {
-        return songsReviewsSortingAndFiltering(category, reactionType)
-    } else if (category) {
-        return songsReviewsFiltering(category)
+const relevantSongsReviews = function(genre, reactionType) {
+    if (genre && reactionType) {
+        return songsReviewsSortingAndFiltering(genre, reactionType)
+    } else if (genre) {
+        return songsReviewsFiltering(genre)
     } else if (reactionType) {
         return songsReviewsSorting(reactionType)
     } else {
@@ -21,7 +22,7 @@ const songsReviewsfiltering = function(SongsReviews) {
         songReviewfilter.singer = songReview.singer
         songReviewfilter.source = songReview.source
         songReviewfilter.user = songReview.user.name
-        songReviewfilter.datePosted = songReview.datePosted
+        songReviewfilter.datePosted = moment(songReview.datePosted).format('l')
         songReviewfilter.genre = songReview.genre
         songReviewfilter.reactions = songReview.reactions
         songReviewfilter.review = songReview.review
@@ -31,16 +32,22 @@ const songsReviewsfiltering = function(SongsReviews) {
     return songsReviewsfiltering
 }
 
-const songsReviewsSortingAndFiltering = function(category, reactionType) {
-    return SongReview.find({ category: category }).populate("user").sort({ "reactions.reactionType": -1 })
+const songsReviewsSortingAndFiltering = function(genreName, reactionType) {
+    let sortBy = "reactions." + reactionType
+    return SongReview.find({ genre: genreName }).populate("user").sort({
+        [sortBy]: -1
+    })
 }
 
-const songsReviewsFiltering = function(category) {
-    return SongReview.find({ category: category }).populate("user")
+const songsReviewsFiltering = function(genreName) {
+    return SongReview.find({ genre: genreName }).populate("user")
 }
 
 const songsReviewsSorting = function(reactionType) {
-    return SongReview.find({}).populate("user").sort({ "reactions.reactionType": -1 })
+    let sortBy = "reactions." + reactionType
+    return SongReview.find({}).populate("user").sort({
+        [sortBy]: -1
+    })
 }
 
 const songsReviews = function() {

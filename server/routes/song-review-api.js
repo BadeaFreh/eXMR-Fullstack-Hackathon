@@ -5,15 +5,15 @@ const User = require("../models/User");
 const songsReviewsUtils = require("../utils/songs-reviews-utils");
 
 router.get("/songs-reviews", function(req, res) {
-    let category = req.query.category
+    let genre = req.query.genre
     let reactionType = req.query.reactionType
 
-    songsReviewsUtils.relevantSongsReviews(category, reactionType)
+    songsReviewsUtils.relevantSongsReviews(genre, reactionType)
         .then((SongsReviews) => {
             const relevantSongsReviewsArray = songsReviewsUtils.songsReviewsfiltering(SongsReviews)
             res.send(relevantSongsReviewsArray)
         })
-        .catch((err) => res.status(500).send({ msg: "Internal server error" }))
+        .catch((err) => res.status(500).send({ msg: err }))
 
 });
 
@@ -31,6 +31,7 @@ router.delete("/song-review/:songReviewID", function(req, res) {
 
 router.post("/userSignUp", function(req, res) {
     const user = new User(req.body)
+
     user.save()
     res.status(201).send({ "message": "user created" })
 })
