@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body> 
-    <form>
 
-      <h2> Login To Your Account</h2>
-    <input id="username-input" placeholder="username"/>
-    <input id="password-input" placeholder="password"/>
-    <button>Login</button>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Sono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles/signin-styles.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html"><img src="./images/logo.png" alt="eXMR Logo" /></a>
+      <h1>eXpress Music Reviews</h1>
+    </div>
+    <div class="sign-buttons">
+      <button class="btn btn-large">Sign in</button>
+      <button class="btn btn-large">Sign up</button>
+    </div>
+  </header>
+  <form class="review-form" action="" method="">
+      <h1 class="header-msg">Login To Your Account</h2>
+      <div class="input-group-1">
+        <input type="text" placeholder="User Name..." class="username-input" id="username-input" />
+      </div>
+      <div class="input-group-2">
+        <input type="password" placeholder="Your Password..." class="singer-name" />
+      </div>
+      <div class="input-group-3">
+        <button class="btn btn-large signin-btn">Sign In</button>
+      </div>
     </form>
-    
 </body>
+
 </html>
