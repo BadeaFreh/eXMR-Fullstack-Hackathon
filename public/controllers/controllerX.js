@@ -6,5 +6,4 @@ window.onload = async function () {
     //let reviews = await model.getReviews()
     render.renderReviews(songReviews)
 }
-window.onload()
 
