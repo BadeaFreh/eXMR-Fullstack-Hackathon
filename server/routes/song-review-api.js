@@ -7,7 +7,7 @@ const songsReviewsUtils = require("../utils/songs-reviews-utils");
 const {ObjectId} = require('bson')
 
 router.get("/songs-reviews", function(req, res) {
-    let category = req.query.category
+    let genre = req.query.genre
     let reactionType = req.query.reactionType
     // songsReviewsUtils.insertData(songsReviewsData)
     songsReviewsUtils.relevantSongsReviews(category, reactionType)
@@ -20,22 +20,16 @@ router.get("/songs-reviews", function(req, res) {
 router.post("/song-review", function(req, res) {
     const songReview = new SongReview(req.body)
     songReview.save()
-    res.status(201).send(songReview)
-})
+    res.status(201).send({ "message": "song review created" })
+});
 
-router.patch('/song-review/:reviewId', function(req, res) {
-    console.log(req.body)
-    SongReview.updateOne(
-        {_id: ObjectId(req.params.reviewId)},
-        {$set: {reactions: req.body}},
-        function(err) {
-            if (!err) {
-                res.send("success")
-            } else {
-                res.send(err)
-            }
-        }
-    )
+router.put('/song-review/:songReviewID', function(req, res) {
+    let songReviewID = req.params.songReviewID
+    const updatedSongReview = req.body
+    SongReview.findByIdAndUpdate(songReviewID, updatedSongReview)
+        .then(function(result) {
+            res.send({ "message": "song review updated" });
+        });
 })
 
 router.delete("/song-review/:songReviewID", function(req, res) {

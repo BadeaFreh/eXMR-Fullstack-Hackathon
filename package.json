@@ -20,8 +20,12 @@
     "jquery": "^3.6.4",
     "jsonwebtoken": "^9.0.0",
     "moment": "^2.29.4",
+<<<<<<< HEAD
     "mongoose": "^6.10.0",
     "mongoose-encryption": "^2.1.2",
     "unique-username-generator": "^1.1.3"
+=======
+    "mongoose": "^7.0.2"
+>>>>>>> d1b4b46e07c45f1185e90951d2f4f9a04f6b0dd1
   }
 }
