@@ -179,6 +179,12 @@
     background-size: 200% auto;
   }
   
+  .disabled-btn {
+    background-image: none;
+    background-color: gray;
+    cursor: default;
+  }
+
   .btn:hover {
     transform: scale(110%) rotate(-2deg);
   }
@@ -258,6 +264,42 @@
     font-size: 18px;
     margin-right: 18px;
   }
+
+  .tag.Metal {
+    background-color: #ef4444;
+  }
+  .tag.Pop {
+    background-color: #3b82f6;
+  }
+  .tag.Hip-Hop {
+    background-color: #16a34a;
+  }
+  .tag.Rock {
+    background-color: #eab308;
+  }
+  .tag.Country {
+    background-color: #db2777;
+  }
+  .tag.Soul {
+    background-color: #14b8a6;
+  }
+  .tag.Alternative {
+    background-color: #f97316;
+  }
+  .tag.Electronic {
+    background-color: #8b5cf6;
+  }
+  .tag.Rap {
+    background-color: #7149C6;
+  }
+  .tag.RNB {
+    background-color: #867070;
+  }
+
+  .side-btns {
+    position: sticky;
+    top: 30px;
+  }
   
   @media (max-width: 900px) {
     .main {
@@ -287,6 +329,8 @@
       width: auto;
     }
   }
+
+  
   
   @media (max-width: 1200px) {
     .input-group-1 {
@@ -327,3 +371,5 @@
       gap: 12px;
     }
   }
+
+  

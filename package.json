@@ -19,6 +19,9 @@
     "handlebars": "^4.7.7",
     "jquery": "^3.6.4",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.2"
+    "moment": "^2.29.4",
+    "mongoose": "^6.10.0",
+    "mongoose-encryption": "^2.1.2",
+    "unique-username-generator": "^1.1.3"
   }
 }

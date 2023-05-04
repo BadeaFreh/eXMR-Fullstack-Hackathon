@@ -22,7 +22,7 @@
   <div class="container">
     <header class="header">
       <div class="logo">
-        <a href="signin.html"><img src="./images/logo.png" alt="eXMR Logo" /></a>
+        <a href="index.html"><img src="./images/logo.png" alt="eXMR Logo" /></a>
         <h1>eXpress Music Reviews</h1>
       </div>
       <div class="sign-buttons">
@@ -30,34 +30,6 @@
         <button class="btn btn-large signup-btn" onclick="window.location.href='/signup.html'">Sign up</button>
       </div>
     </header>
-
-    <form class="review-form">
-      <div class="input-group-1">
-        <input type="text" placeholder="Youtube Link..." class="song-link" />
-        <input type="text" placeholder="Song Name" class="song-name" />
-        <input type="text" placeholder="Singer" class="singer-name" />
-        <select class="categories-menu">
-          <option value="">category</option>
-          <option value="Pop">Pop</option>
-          <option value="Hip-Hop">Hip-Hop</option>
-          <option value="Metal">Metal</option>
-          <option value="Rock">Rock</option>
-          <option value="Country">Country</option>
-          <option value="Soul">Soul</option>
-          <option value="Alternative">Alternative</option>
-          <option value="Electronic">Electronic</option>
-          <option value="Rap">Rap</option>
-          <option value="RNB">RNB</option>
-        </select>
-      </div>
-      <div class="input-group-2">
-        <input class="review-input" type="text" placeholder="Share a review..." class="review-content" />
-      </div>
-      <div class="input-group-3">
-        <button class="btn btn-large submit-btn" type="submit">Post</button>
-      </div>
-    </form>
-
     <main class="main">
       <aside>
         <ul class="side-btns">
@@ -155,7 +127,7 @@
 
   <script id="reviews-template" type="text/x-handlebars-template">
     {{#each review}}
-          <li class="review" id="{{_id}}">
+          <li class="review">
             <div class="review-header">
               <div class="header-content">
                 <span class="song-title">{{songTitle}}</span><span class="singer">,by {{singer}}</span>
@@ -175,10 +147,10 @@
                 </a>
               </div>
               <div class="vote-buttons">
-                <button class="reaction like-btn">👍 {{reactions.likes}}</button>
-                <button class="reaction dislike-btn">👎 {{reactions.dislikes}}</button>
-                <button class="reaction wow-btn">😮 {{reactions.wow}}</button>
-                <button class="reaction angry-btn">😡 {{reactions.angry}}</button>
+                <button>👍 {{reactions.likes}} </button>
+                <button>👍 {{reactions.dislikes}} </button>
+                <button>😮 {{reactions.wow}}</button>
+                <button>😡  {{reactions.angry}} </button>
               </div>
             </div>
           </li>

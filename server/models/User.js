@@ -1,12 +1,16 @@
 const mongoose = require('mongoose')
+const encrypt = require("mongoose-encryption")
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        unique: true
+    },
     password: String,
-    email: String,
-    songsReviews: [{ type: Schema.Types.ObjectId, ref: 'SongReview' }]
 })
+const secret = "outlittlesecret."
+userSchema.plugin(encrypt, {secret: secret, encryptedFields: ['password']})
 
 const User = mongoose.model("User", userSchema)
 module.exports = User

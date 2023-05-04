@@ -5,8 +5,8 @@ const songReviewSchema = new Schema({
     songTitle: String,
     singer: String,
     source: String,
-    user: { type: Schema.Types.ObjectId, ref: 'User' },
-    datePosted: Date,
+    user: String,
+    datePosted: String,
     genre: String,
     reactions: Object,
     review: String
