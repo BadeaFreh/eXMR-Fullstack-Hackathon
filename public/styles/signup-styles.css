@@ -1,219 +1,224 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #292524;
-  color: #fafaf9;
-  font-family: "Sono", sans-serif;
-  padding: 48px 64px;
+    background-color: #292524;
+    color: #fafaf9;
+    font-family: 'Sono', sans-serif;
+    padding: 48px 64px;
 }
 
 .header {
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .main {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 48px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 48px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .logo img {
-  width: 150px;
-  height: 150px;
-  border-radius: 10%;
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
 }
 
 h1 {
-  font-size: 42px;
-  font-family: "Coiny", sans-serif;
-  line-height: 1;
-  margin-top: 6px;
+    font-size: 42px;
+    font-family: 'Coiny', sans-serif;
+    line-height: 1;
+    margin-top: 6px;
 }
 
 .header-content {
-  text-align: center;
-  margin-top: 5px;
-  color: rgb(20, 20, 20);
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(20, 20, 20);
 }
 
 .btn {
-  border: none;
-  font-family: "Coiny", sans-serif;
-  line-height: 1;
-  text-transform: uppercase;
-  font-size: 17px;
-  padding: 16px 0 13px;
-  color: inherit;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: 0.3s;
-  
-  background-image: linear-gradient(
-    135deg, #3b82f6 0%, #16a34a 20%, #db2777  51%, #eab308 80% , #db2777  100%
+    border: none;
+    font-family: 'Coiny', sans-serif;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 16px 0 13px;
+    color: inherit;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    background-image: linear-gradient(
+        135deg,
+        #3b82f6 0%,
+        #16a34a 20%,
+        #db2777 51%,
+        #eab308 80%,
+        #db2777 100%
     );
-  background-size: 200% auto;
+    background-size: 200% auto;
 }
 
 .btn:hover {
-  transform: scale(110%) rotate(-2deg);
+    transform: scale(110%) rotate(-2deg);
 }
 
 .btn-large {
-  font-size: 20px;
-  padding: 20px 32px 17px;
+    font-size: 20px;
+    padding: 20px 32px 17px;
 }
 
 .signin-btn {
-  display: block;
-  width: 100%;
-  margin: 0 auto;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .signin-btn:hover {
-  transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
 }
 
 .btn-category {
-  width: 100%;
-  background-image: none;
+    width: 100%;
+    background-image: none;
 }
 
 /* FORM */
 .review-form {
-  background-color: #44403c;
-  gap: 16px;
-  border-radius: 16px;
-  width: 70%;
-  margin: 0 auto;
-  padding-top: 5px;
-  padding-bottom: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
+    background-color: #44403c;
+    gap: 16px;
+    border-radius: 16px;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .input-group-1 {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .input-group-2 {
-  margin-top: 20px;
-  display: flex;
+    margin-top: 20px;
+    display: flex;
 }
 
 .input-group-3 {
-  margin-top: 20px;
-  /* display: block; */
+    margin-top: 20px;
+    /* display: block; */
 }
 
 .review-form input,
 .review-form select {
-  width: 220px;
-  background-color: #78716c;
-  border: none;
-  border-radius: 100px;
-  padding: 16px;
-  font-size: 18px;
-  color: inherit;
-  font-family: inherit;
+    width: 220px;
+    background-color: #78716c;
+    border: none;
+    border-radius: 100px;
+    padding: 16px;
+    font-size: 18px;
+    color: inherit;
+    font-family: inherit;
 }
 .review-form input::placeholder {
-  color: #a8a29e;
+    color: #a8a29e;
 }
 
 .review-form input:first-child {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .review-form span {
-  font-weight: 600;
-  font-size: 18px;
-  margin-right: 18px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 18px;
 }
 
 @media (max-width: 900px) {
-  .main {
-    grid-template-columns: 1fr;
-  }
+    .main {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 930px) {
-  .review-footer {
-      flex-direction: column;
-      margin: 0 auto;
-  }
+    .review-footer {
+        flex-direction: column;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 1000px) {
-  body {
-    padding: 32px 48px;
-  }
+    body {
+        padding: 32px 48px;
+    }
 
-  .review-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
+    .review-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-  .review-form input,
-  .review-form select {
-    width: auto;
-  }
+    .review-form input,
+    .review-form select {
+        width: auto;
+    }
 }
 
 @media (max-width: 1200px) {
-  .input-group-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  .input-group-1 input,
-  .input-group-1 select {
-    width: 100%;
-  }
-  .input-group-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .input-group-2 input {
-    width: 100%;
-  }
-  .signin-btn {
-    margin: 0 auto;
-    width: 100%;
-  }
+    .input-group-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .input-group-1 input,
+    .input-group-1 select {
+        width: 100%;
+    }
+    .input-group-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-group-2 input {
+        width: 100%;
+    }
+    .signin-btn {
+        margin: 0 auto;
+        width: 100%;
+    }
 
-  form input {
-    display: block;
-    margin: 0 auto;
-  }
-  .sign-buttons{
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    gap: 15px;
-  }
+    form input {
+        display: block;
+        margin: 0 auto;
+    }
+    .sign-buttons {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
 .header-msg {
-  font-family: 'Sono';
-  text-align: center;
-  padding: 20px 10px;
-  margin: 40px auto;
-  width: 50%;
-  background-color: transparent;
-  border-radius: 10px;
+    font-family: 'Sono';
+    text-align: center;
+    padding: 20px 10px;
+    margin: 40px auto;
+    width: 50%;
+    background-color: transparent;
+    border-radius: 10px;
 }

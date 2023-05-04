@@ -1,52 +1,51 @@
-const express = require("express");
-const router = express.Router();
-const User = require("../models/User");
+const express = require('express')
+const router = express.Router()
+const User = require('../models/User')
 
-router.get('/signin', function(req, res) {
+router.get('/signin', function (req, res) {
     res.sendFile('signin.html', {
-        root: 'public/'
+        root: 'public/',
     })
 })
 
-router.get('/signup', function(req, res) {
+router.get('/signup', function (req, res) {
     res.sendFile('signup.html', {
-        root: 'public/'
+        root: 'public/',
     })
 })
 
-router.post('/signin', function(req, res) {
+router.post('/signin', function (req, res) {
     const userName = req.body.username
     const password = req.body.password
 
-    User.findOne({name: userName}, function(err, foundUser) {
+    User.findOne({ name: userName }, function (err, foundUser) {
         if (err) {
-            console.log("error")
-        }
-        else if (foundUser && foundUser.password === password) {
-           res.sendFile('index.html', {
-            root: 'public/'
-           })
+            console.log('error')
+        } else if (foundUser && foundUser.password === password) {
+            res.sendFile('index.html', {
+                root: 'public/',
+            })
         } else {
             res.sendFile('disabled.html', {
-                root: 'public/'
+                root: 'public/',
             })
         }
     })
 })
 
-router.post('/signup', function(req, res) {
+router.post('/signup', function (req, res) {
     const newUser = new User({
         name: req.body.username,
-        password: req.body.password
+        password: req.body.password,
     })
-    newUser.save(function(err) {
+    newUser.save(function (err) {
         if (err) {
             res.status(409).sendFile('409.html', {
-                root: 'public/'
+                root: 'public/',
             })
         } else {
             res.sendFile('signin.html', {
-                root: 'public/'
+                root: 'public/',
             })
         }
     })

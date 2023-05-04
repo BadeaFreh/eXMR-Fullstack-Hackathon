@@ -2,56 +2,56 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     background-color: #292524;
     color: #fafaf9;
-    font-family: "Sono", sans-serif;
+    font-family: 'Sono', sans-serif;
     padding: 48px 64px;
-  }
-  
-  .header {
+}
+
+.header {
     margin-bottom: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  
-  .main {
+}
+
+.main {
     display: grid;
     grid-template-columns: 250px 1fr;
     gap: 48px;
-  }
-  
-  .logo {
+}
+
+.logo {
     display: flex;
     align-items: center;
     gap: 16px;
-  }
-  
-  .logo img {
+}
+
+.logo img {
     width: 150px;
     height: 150px;
     border-radius: 10%;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 42px;
-    font-family: "Coiny", sans-serif;
+    font-family: 'Coiny', sans-serif;
     line-height: 1;
     margin-top: 6px;
-  }
-  
-  .header-content {
+}
+
+.header-content {
     text-align: center;
     margin-top: 5px;
     color: rgb(20, 20, 20);
-  }
-  
-  .btn {
+}
+
+.btn {
     border: none;
-    font-family: "Coiny", sans-serif;
+    font-family: 'Coiny', sans-serif;
     line-height: 1;
     text-transform: uppercase;
     font-size: 17px;
@@ -60,39 +60,44 @@
     border-radius: 100px;
     cursor: pointer;
     transition: 0.3s;
-    
+
     background-image: linear-gradient(
-      135deg, #3b82f6 0%, #16a34a 20%, #db2777  51%, #eab308 80% , #db2777  100%
-      );
+        135deg,
+        #3b82f6 0%,
+        #16a34a 20%,
+        #db2777 51%,
+        #eab308 80%,
+        #db2777 100%
+    );
     background-size: 200% auto;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     transform: scale(110%) rotate(-2deg);
-  }
-  
-  .btn-large {
+}
+
+.btn-large {
     font-size: 20px;
     padding: 20px 32px 17px;
-  }
-  
-  .signin-btn {
+}
+
+.signin-btn {
     display: block;
     width: 100%;
     margin: 0 auto;
-  }
-  
-  .signin-btn:hover {
+}
+
+.signin-btn:hover {
     transform: scale(1) rotate(0deg);
-  }
-  
-  .btn-category {
+}
+
+.btn-category {
     width: 100%;
     background-image: none;
-  }
-  
-  /* FORM */
-  .review-form {
+}
+
+/* FORM */
+.review-form {
     background-color: #44403c;
     gap: 16px;
     border-radius: 16px;
@@ -102,25 +107,25 @@
     padding-bottom: 40px;
     padding-left: 20px;
     padding-right: 20px;
-  }
-  
-  .input-group-1 {
+}
+
+.input-group-1 {
     display: flex;
     gap: 10px;
-  }
-  
-  .input-group-2 {
+}
+
+.input-group-2 {
     margin-top: 20px;
     display: flex;
-  }
-  
-  .input-group-3 {
+}
+
+.input-group-3 {
     margin-top: 20px;
     /* display: block; */
-  }
-  
-  .review-form input,
-  .review-form select {
+}
+
+.review-form input,
+.review-form select {
     width: 220px;
     background-color: #78716c;
     border: none;
@@ -129,84 +134,84 @@
     font-size: 18px;
     color: inherit;
     font-family: inherit;
-  }
-  .review-form input::placeholder {
+}
+.review-form input::placeholder {
     color: #a8a29e;
-  }
-  
-  .review-form input:first-child {
+}
+
+.review-form input:first-child {
     flex-grow: 1;
-  }
-  
-  .review-form span {
+}
+
+.review-form span {
     font-weight: 600;
     font-size: 18px;
     margin-right: 18px;
-  }
-  
-  @media (max-width: 900px) {
+}
+
+@media (max-width: 900px) {
     .main {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-  }
-  
-  @media (max-width: 930px) {
+}
+
+@media (max-width: 930px) {
     .review-footer {
         flex-direction: column;
         margin: 0 auto;
     }
-  }
-  
-  @media (max-width: 1000px) {
+}
+
+@media (max-width: 1000px) {
     body {
-      padding: 32px 48px;
+        padding: 32px 48px;
     }
-  
+
     .review-form {
-      flex-direction: column;
-      align-items: stretch;
+        flex-direction: column;
+        align-items: stretch;
     }
-  
+
     .review-form input,
     .review-form select {
-      width: auto;
+        width: auto;
     }
-  }
-  
-  @media (max-width: 1200px) {
+}
+
+@media (max-width: 1200px) {
     .input-group-1 {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
     .input-group-1 input,
     .input-group-1 select {
-      width: 100%;
+        width: 100%;
     }
     .input-group-2 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .input-group-2 input {
-      width: 100%;
+        width: 100%;
     }
     .signin-btn {
-      margin: 0 auto;
-      width: 100%;
+        margin: 0 auto;
+        width: 100%;
     }
-  
+
     form input {
-      display: block;
-      margin: 0 auto;
+        display: block;
+        margin: 0 auto;
     }
-    .sign-buttons{
-      display: flex;
-      align-items: flex-end;
-      flex-direction: column;
-      gap: 15px;
+    .sign-buttons {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 15px;
     }
-  }
+}
 
 .header-msg {
     font-family: 'Sono';

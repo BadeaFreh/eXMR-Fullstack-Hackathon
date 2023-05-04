@@ -1,12 +1,11 @@
-const SongReview = require("../models/SongReview");
-const moment = require("moment")
+const SongReview = require('../models/SongReview')
+const moment = require('moment')
 
-const relevantSongsReviews = function(category, reactionType) {
-    
+const relevantSongsReviews = function (category, reactionType) {
     if (category && reactionType) {
         return songsReviewsSortingAndFiltering(category, reactionType)
     } else if (category) {
-        console.log("reached")
+        console.log('reached')
         return songsReviewsFiltering(category)
     } else if (reactionType) {
         return songsReviewsSorting(reactionType)
@@ -15,7 +14,7 @@ const relevantSongsReviews = function(category, reactionType) {
     }
 }
 
-const songsReviewsfiltering = function(SongsReviews) {
+const songsReviewsfiltering = function (SongsReviews) {
     let songsReviewsfiltering = []
     for (const songReview of SongsReviews) {
         let songReviewfilter = {}
@@ -34,34 +33,38 @@ const songsReviewsfiltering = function(SongsReviews) {
     return songsReviewsfiltering
 }
 
-const songsReviewsSortingAndFiltering = function(genreName, reactionType) {
-    let sortBy = "reactions." + reactionType
-    return SongReview.find({ genre: genreName }).populate("user").sort({
-        [sortBy]: -1
-    })
+const songsReviewsSortingAndFiltering = function (genreName, reactionType) {
+    let sortBy = 'reactions.' + reactionType
+    return SongReview.find({ genre: genreName })
+        .populate('user')
+        .sort({
+            [sortBy]: -1,
+        })
 }
 
-const songsReviewsFiltering = function(genreName) {
-    return SongReview.find({ genre: genreName }).populate("user")
+const songsReviewsFiltering = function (genreName) {
+    return SongReview.find({ genre: genreName }).populate('user')
 }
 
-const songsReviewsSorting = function(reactionType) {
-    let sortBy = "reactions." + reactionType
-    return SongReview.find({}).populate("user").sort({
-        [sortBy]: -1
-    })
+const songsReviewsSorting = function (reactionType) {
+    let sortBy = 'reactions.' + reactionType
+    return SongReview.find({})
+        .populate('user')
+        .sort({
+            [sortBy]: -1,
+        })
 }
 
-const songsReviews = async function() {
+const songsReviews = async function () {
     const reviews = await SongReview.find({})
     return reviews
 }
 
-function formattedDate (date) {
-    let year = date.toLocaleString("default", { year: "numeric" });
-    let month = date.toLocaleString("default", { month: "2-digit" });
-    let day = date.toLocaleString("default", { day: "2-digit" });
-    let formattedDate = year + "-" + month + "-" + day
+function formattedDate(date) {
+    let year = date.toLocaleString('default', { year: 'numeric' })
+    let month = date.toLocaleString('default', { month: '2-digit' })
+    let day = date.toLocaleString('default', { day: '2-digit' })
+    let formattedDate = year + '-' + month + '-' + day
     return formattedDate
 }
 
@@ -75,11 +78,11 @@ const insertData = function (reviews) {
             datePosted: formattedDate(review.datePosted),
             genre: review.genre,
             reactions: review.reactions,
-            review: review.review
+            review: review.review,
         })
         songReview.save()
     }
     return SongReview.find({})
 }
 
-module.exports = { relevantSongsReviews, songsReviewsfiltering, insertData };
+module.exports = { relevantSongsReviews, songsReviewsfiltering, insertData }

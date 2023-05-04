@@ -1,15 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const SongReview = require('../models/SongReview')
-const User = require('../models/User')
 const songsReviewsUtils = require('../utils/songs-reviews-utils')
-// const songsReviewsData = require('../data/dummy-data')
-const { ObjectId } = require('bson')
 
 router.get('/songs-reviews', function (req, res) {
     let category = req.query.category
     let reactionType = req.query.reactionType
-    // songsReviewsUtils.insertData(songsReviewsData)
     songsReviewsUtils
         .relevantSongsReviews(category, reactionType)
         .then((SongsReviews) => {
